@@ -15,7 +15,7 @@ setup(
     license='BSD License',  # example license
     description='A simple Wagtail contact app.',
     long_description=README,
-    url='https://www.example.com/',
+    url='https://github.com/regulusweb/wagtail-contact',
     author='Regulus web',
     author_email='erick@regulusweb.com',
     install_requires=[
