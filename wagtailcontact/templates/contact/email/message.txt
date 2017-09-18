@@ -1,0 +1,5 @@
+{% autoescape off %}
+Enquiry from {{ name }} ({{ email }}):
+
+{{ message|striptags }}
+{% endautoescape %}
