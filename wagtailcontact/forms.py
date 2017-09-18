@@ -6,8 +6,8 @@ from django.template import loader
 
 class ContactForm(forms.Form):
 
-    subject_template = "contact/email/subject.txt"
-    txt_template = "contact/email/message.txt"
+    subject_template = "wagtailcontact/email/subject.txt"
+    txt_template = "wagtailcontact/email/message.txt"
     success_url = None
 
     name = forms.CharField(max_length=100, required=True)
