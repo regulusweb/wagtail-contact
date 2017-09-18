@@ -41,7 +41,7 @@ class ContactForm(forms.Form):
             return [page.enquiry_email]
         except AttributeError:
              return [e for _, e in settings.MANAGERS]
-       
+
 
 
     def save(self, page):

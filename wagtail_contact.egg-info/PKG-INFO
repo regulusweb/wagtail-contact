@@ -2,7 +2,7 @@ Metadata-Version: 1.1
 Name: wagtail-contact
 Version: 0.1
 Summary: A simple Wagtail contact app.
-Home-page: https://www.example.com/
+Home-page: https://github.com/regulusweb/wagtail-contact
 Author: Regulus web
 Author-email: erick@regulusweb.com
 License: BSD License
