@@ -11,6 +11,7 @@ setup(
     name='wagtail-contact',
     version='0.1',
     packages=find_packages(),
+    test_suite='runtests.run_tests',
     include_package_data=True,
     license='MIT License',
     description='A simple Wagtail contact app.',
