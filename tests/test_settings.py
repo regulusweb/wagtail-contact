@@ -30,3 +30,9 @@ TEMPLATES = [
         },
     },
 ]
+
+MANAGERS = [
+    ('admin', 'admin@localhost.com')
+]
+
+EMAIL_SUBJECT_PREFIX = 'Admin'

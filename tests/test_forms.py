@@ -1,3 +1,5 @@
+from unittest.mock import Mock
+
 from django.core import mail
 from django.test import TestCase
 
@@ -18,6 +20,12 @@ class ContactFormTestCase(TestCase):
             ])
         )
 
+    def test_email_subject_prefix_added_to_ctx(self):
+        form = ContactForm(data=self.valid_data.copy())
+        form.is_valid()
+        ctx = form.get_email_context()
+        self.assertEqual(ctx['subject_prefix'], 'Admin')
+
     def test_form_valid(self):
         form = ContactForm(data=self.valid_data.copy())
         self.assertTrue(form.is_valid())
@@ -32,3 +40,25 @@ class ContactFormTestCase(TestCase):
 
         self.assertEqual(len(mail.outbox), 1)
         self.assertIn('Hello good people', mail.outbox[0].body)
+
+    def test_go_to_with_enquiryemail(self):
+        form = ContactForm()
+        page = Mock()
+        page.enquiry_email = 'e@e.com'
+        to = form.get_to(page)
+        self.assertEqual(to, ['e@e.com'])
+
+    def test_go_to_without_enquiryemail(self):
+        form = ContactForm()
+        page = Mock()
+        page.enquiry_email = ''
+        to = form.get_to(page)
+        self.assertEqual(to, ['admin@localhost.com'])
+
+    def test_save(self):
+        form = ContactForm()
+        form.cleaned_data = self.valid_data.copy()
+        page = Mock()
+        page.enquiry_email = 'e@e.com'
+        form.save(page)
+        self.assertEqual(len(mail.outbox), 1)
