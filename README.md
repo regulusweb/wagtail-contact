@@ -28,3 +28,8 @@ Like so:
 And then within the form include the honeypot field:
 
 `{% render_honeypot_field %}`
+
+### Tests
+To run the tests, within your Wagtail project simply invoke `python manage.py test wagtailcontact tests`.
+
+[TODO]: Add a standalone test runner script.

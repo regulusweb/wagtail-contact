@@ -8,7 +8,6 @@ class ContactForm(forms.Form):
 
     subject_template = "wagtailcontact/email/subject.txt"
     txt_template = "wagtailcontact/email/message.txt"
-    success_url = None
 
     name = forms.CharField(max_length=100, required=True)
     email = forms.EmailField(required=True)
