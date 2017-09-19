@@ -11,7 +11,7 @@ class ContactForm(forms.Form):
     success_url = None
 
     name = forms.CharField(max_length=100, required=True)
-    email = forms.EmailField(max_length=200, required=True)
+    email = forms.EmailField(required=True)
     message = forms.CharField(
         widget=forms.Textarea(attrs={'rows': 4, 'cols': False}),
         required=True,
@@ -40,9 +40,7 @@ class ContactForm(forms.Form):
         try:
             return [page.enquiry_email]
         except AttributeError:
-             return [e for _, e in settings.MANAGERS]
-
-
+            return [e for _, e in settings.MANAGERS]
 
     def save(self, page):
         # Forward enquiry

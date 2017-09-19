@@ -10,7 +10,7 @@ from .forms import ContactForm
 class ContactMixin():
     form_class = ContactForm
     success_url = None
-    success_message = ''
+    success_message = 'Thank you! We will get back to you as soon as possible.'
 
     def get_form(self, request):
         return self.form_class(request.POST or None)
@@ -39,5 +39,4 @@ class ContactMixin():
         return self.success_url or self.url
 
     def get_success_message(self):
-        msg = 'Thank you! We will get back to you as soon as possible.'
-        return self.success_message or msg
+        return self.success_message

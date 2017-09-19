@@ -19,7 +19,8 @@ setup(
     author='Regulus Ltd',
     author_email='info@regulusweb.com',
     install_requires=[
-        'django-honeypot==0.6.0'
+        'django-honeypot==0.6.0',
+        'bleach==2.0.0'
     ],
     classifiers=[
         'Environment :: Web Environment',
