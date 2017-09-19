@@ -12,24 +12,23 @@ setup(
     version='0.1',
     packages=find_packages(),
     include_package_data=True,
-    license='BSD License',  # example license
+    license='MIT License',
     description='A simple Wagtail contact app.',
     long_description=README,
     url='https://github.com/regulusweb/wagtail-contact',
-    author='Regulus web',
-    author_email='erick@regulusweb.com',
+    author='Regulus Ltd',
+    author_email='info@regulusweb.com',
     install_requires=[
         'django-honeypot==0.6.0'
     ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.11',  # replace "X.Y" as appropriate
+        'Framework :: Django :: 1.11',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',  # example license
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        # Replace these appropriately if you are stuck on Python 2.
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',

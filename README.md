@@ -20,7 +20,7 @@ When rendering the form in your page template be sure to add the honeypot field 
 
 Like so:
 
-`load honeypot`
+`{% load honeypot %}`
 
 And then within any form including the tag:
 
