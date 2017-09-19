@@ -37,9 +37,9 @@ class ContactForm(forms.Form):
         msg.send()
 
     def get_to(self, page):
-        try:
+        if page.enquiry_email:
             return [page.enquiry_email]
-        except AttributeError:
+        else:
             return [e for _, e in settings.MANAGERS]
 
     def save(self, page):

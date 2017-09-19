@@ -1,5 +1,8 @@
 Provide a simple mixin which bakes a contact form(send emails on submit) into the inheriting classes, specifically Wagtail pages.
 
+The mixin is an abstract Django model which has an enquiry_email field.
+This field is also added to the content_panels.
+
 ### Install
 `pip install https://github.com/regulusweb/wagtail-contact/archive/master.zip`
 
@@ -22,6 +25,6 @@ Like so:
 
 `{% load honeypot %}`
 
-And then within any form including the tag:
+And then within the form include the honeypot field:
 
 `{% render_honeypot_field %}`
