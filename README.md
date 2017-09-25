@@ -6,11 +6,14 @@ This field is also added to the content_panels.
 ### Install
 `pip install https://github.com/regulusweb/wagtail-contact/archive/master.zip`
 
-Be sure to add `honeypot` and `wagtailcontact` to INSTALLED_APPS in settings.py.
-The contact form uses `django-honeypot` to prevent automated form spam.
+Be sure to add `honeypot`, `crispy_forms`, and `wagtailcontact` to INSTALLED_APPS in settings.py.
+The contact form uses `django-honeypot` to prevent automated form spam and
+`django-crispy-forms` to spice things up.
 
+Note: The crispy helper has `form_tag` set to `False` to make it easy
+to render the honeypot field within the form.
 
-`django-honeypot` also requires a few settings to be declared in settings.py.
+Set the `CRISPY_TEMPLATE_PACK` in your settings. `django-honeypot` also requires a few settings to be declared in settings.py.
 See [django-honeypot](https://github.com/jamesturk/django-honeypot) for more information.
 
 

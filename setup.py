@@ -21,6 +21,7 @@ setup(
     author_email='info@regulusweb.com',
     install_requires=[
         'django-honeypot==0.6.0',
+        'django-crispy-forms==1.6.1',
         'bleach==2.0.0',
         'wagtail>=1.12'
     ],
