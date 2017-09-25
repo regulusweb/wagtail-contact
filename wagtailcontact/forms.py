@@ -3,6 +3,10 @@ from django.conf import settings
 from django.core.mail import EmailMessage
 from django.template import loader
 
+from crispy_forms.bootstrap import StrictButton
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout
+
 
 class ContactForm(forms.Form):
 
@@ -15,6 +19,17 @@ class ContactForm(forms.Form):
         widget=forms.Textarea(attrs={'rows': 4, 'cols': False}),
         required=True,
     )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+        self.helper.layout = Layout(
+            'name',
+            'email',
+            'message',
+            StrictButton('Send', type="submit", css_class="btn btn-primary"),
+        )
 
     def get_email_context(self):
         ctx = self.cleaned_data
